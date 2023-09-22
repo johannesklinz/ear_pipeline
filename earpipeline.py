@@ -299,7 +299,7 @@ class EarPipeline:
                                             for segment in result["segments"]] if result["segments"] else [])
                 number_segments.append(len(result["segments"]))
                 speech_duration.append(np.sum([segment["end"]-segment["start"] for segment in result["segments"]]))
-                if languages[-1] != "english":
+                if languages[-1] != "english" and len(segments_english[-1]):
                     result = whisper.transcribe(model=whisper_model, audio=audio, task="transcribe")
                     segments_foreign.append([(segment["start"], segment["end"], segment["text"]) 
                                             for segment in result["segments"]] if result["segments"] else [])
