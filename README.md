@@ -1,5 +1,5 @@
 # EAR Pipeline
-This pipeline combines the likes of OpenAI's [Whisper](https://github.com/openai/whisper) and UCS's [Foreground Speech Detection](https://github.com/usc-sail/egocentric-fg-speech-detection). In doing so, it supports 30s audio files - in theory, Whisper also supports longer files but FG is limited to this threshold as of now.
+This pipeline combines the likes of OpenAI's [Whisper](https://github.com/openai/whisper) and UCS' [Foreground Speech Detection](https://github.com/usc-sail/egocentric-fg-speech-detection). In doing so, it supports 30s audio files - in theory, Whisper also supports longer files but FG is limited to this threshold as of now.
 ## Setup Instruction
 1. Install [Python 3.9.9](https://www.python.org/downloads/release/python-399/).
 2. Install [Git](https://git-scm.com/downloads).
