@@ -15,7 +15,7 @@ This pipeline combines the likes of OpenAI's [Whisper](https://github.com/openai
 There are two versions of this pipeline:
 1. **earpipeline.py**: Runs FG and Whisper independently.
 2. **earpipeline_adj.py**: Only runs Whisper transcription if FG detected speech.<br>
-The latter is more robust if silence is prominent throughout the dataset since Whisper tends to hallucinate in these cases.<br>
+The latter is more robust if silence is prominent throughout the dataset since Whisper tends to hallucinate in these cases.<br><br>
 Within the `earpipeline*.py`, at the very bottom, one can set three different variables:
 - **audio_dirs**: This variable must be a list of strings. The strings should refer to all directories that contain wav-files and should be processed. Please make sure that you provide the different paths with forward slashes (i.e., /). You may provide as many paths as you like, the pipeline will filter out all wav-files in any given directory (not within its subdirectories!).
 - **output_save_path**: Expects a path as a string, indicating under which location the Excel-output should be stored (i.e., the path must end with .xlsx).
