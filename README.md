@@ -1,5 +1,5 @@
 # EAR Pipeline
-This pipeline combines the likes of OpenAI's [Whisper](https://github.com/openai/whisper) and UCS' [Foreground Speech Detection](https://github.com/usc-sail/egocentric-fg-speech-detection). In doing so, it supports 30s audio files - in theory, Whisper also supports longer files but FG is limited to this threshold as of now.
+This pipeline combines the likes of OpenAI's [Whisper](https://github.com/openai/whisper) and USC's [Foreground Speech Detection](https://github.com/usc-sail/egocentric-fg-speech-detection). In doing so, it supports 30s audio files - in theory, Whisper also supports longer files but FG is limited to this threshold as of now.
 ## Setup Instruction
 1. Install [Python 3.9.9](https://www.python.org/downloads/release/python-399/).
 2. Install [Git](https://git-scm.com/downloads).
@@ -12,14 +12,12 @@ This pipeline combines the likes of OpenAI's [Whisper](https://github.com/openai
 `pip install -r requirements.txt`
 7. Download the models [here](https://drive.google.com/file/d/1dSKxlhW8ZEbewpyKkQz1LcTe_XpkQks9/view?usp=sharing) and extract them into the *models* folder.
 ## Run Inference
-There are two versions of this pipeline:
-1. **earpipeline.py**: Runs FG and Whisper independently.
-2. **earpipeline_adj.py**: Only runs Whisper transcription if FG detected speech.<br>
-The latter is more robust if silence is prominent throughout the dataset since Whisper tends to hallucinate in these cases.<br><br>
 Within the `earpipeline*.py`, at the very bottom, one can set three different variables:
 - **audio_dirs**: This variable must be a list of strings. The strings should refer to all directories that contain wav-files and should be processed. Please make sure that you provide the different paths with forward slashes (i.e., /). You may provide as many paths as you like, the pipeline will filter out all wav-files in any given directory (not within its subdirectories!).
 - **output_save_path**: Expects a path as a string, indicating under which location the Excel-output should be stored (i.e., the path must end with .xlsx).
 - **log_save_path**: Expects a path as a string, indicating under which location the log file (i.e., meta information regarding the processing) should be stored (i.e., the path must end with .txt).
+<br><br>
+In case you only want to run the FG algorithm, please refer to the `foreground.py` that accepts the same parameters.
 ## Interpretation
 The Excel-output contains thirteen columns, specifically:
 - **file_name**: Denotes the name of the processed file.
